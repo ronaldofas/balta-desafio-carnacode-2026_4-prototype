@@ -4,11 +4,11 @@ namespace DesignPatternChallenge.Models;
 
 public class DocumentStyle : IPrototype<DocumentStyle>
 {
-    public string FontFamily { get; set; }
+    public string FontFamily { get; set; } = string.Empty;
     public int FontSize { get; set; }
-    public string HeaderColor { get; set; }
-    public string LogoUrl { get; set; }
-    public Margins PageMargins { get; set; }
+    public string HeaderColor { get; set; } = string.Empty;
+    public string LogoUrl { get; set; } = string.Empty;
+    public Margins PageMargins { get; set; } = new();
 
     /// <summary>
     /// Cria uma cópia profunda de DocumentStyle.
@@ -24,7 +24,7 @@ public class DocumentStyle : IPrototype<DocumentStyle>
             FontSize = FontSize,
             HeaderColor = HeaderColor,
             LogoUrl = LogoUrl,
-            PageMargins = PageMargins?.Clone()
+            PageMargins = PageMargins.Clone()
         };
     }
 }

@@ -4,13 +4,13 @@ namespace DesignPatternChallenge.Models;
 
 public class DocumentTemplate : IPrototype<DocumentTemplate>
 {
-    public string Title { get; set; }
-    public string Category { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
     public List<Section> Sections { get; set; }
-    public DocumentStyle Style { get; set; }
+    public DocumentStyle Style { get; set; } = new();
     public List<string> RequiredFields { get; set; }
     public Dictionary<string, string> Metadata { get; set; }
-    public ApprovalWorkflow Workflow { get; set; }
+    public ApprovalWorkflow Workflow { get; set; } = new();
     public List<string> Tags { get; set; }
 
     public DocumentTemplate()
@@ -42,8 +42,8 @@ public class DocumentTemplate : IPrototype<DocumentTemplate>
             Sections = Sections.Select(s => s.Clone()).ToList(),
 
             // Objetos complexos — delegar para seus próprios Clone()
-            Style = Style?.Clone(),
-            Workflow = Workflow?.Clone(),
+            Style = Style.Clone(),
+            Workflow = Workflow.Clone(),
 
             // Listas de strings — construtor de cópia é suficiente
             RequiredFields = new List<string>(RequiredFields),
