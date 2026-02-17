@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>DesignPatternChallenge</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- Exclui o arquivo original do desafio (substituído pelos novos arquivos refatorados) -->
+  <ItemGroup>
+    <Compile Remove="Challenge.cs" />
+  </ItemGroup>
+
+</Project>
